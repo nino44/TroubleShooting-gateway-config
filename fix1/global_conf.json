@@ -2,15 +2,22 @@
     "SX1301_conf": {
         "lorawan_public": true,
         "clksrc": 1, /* radio_1 provides clock to concentrator */
-        "lbt_cfg": {
+        "lbt_conf":{
             "enable": false,
             "rssi_target": -80, /* dBm */
-            "chan_cfg":[ /* 8 channels maximum */
-                { "freq_hz": 867100000, "scan_time_us": 128 },
-                { "freq_hz": 867300000, "scan_time_us": 5000 },
-                { "freq_hz": 867500000, "scan_time_us": 128 },
-                { "freq_hz": 869525000, "scan_time_us": 128 }
-            ],
+            "rssi_shift": 142,
+            "chan_cfg":[ /* 16 channels maximum */
+                { "freq_hz": 867100000, "scan_time_us": 128, "transmit_time_ms": 400 },
+                { "freq_hz": 867300000, "scan_time_us": 128, "transmit_time_ms": 400 },
+                { "freq_hz": 867500000, "scan_time_us": 128, "transmit_time_ms": 400 },
+                { "freq_hz": 867700000, "scan_time_us": 128, "transmit_time_ms": 400 },
+                { "freq_hz": 867900000, "scan_time_us": 128, "transmit_time_ms": 400 },
+                { "freq_hz": 868100000, "scan_time_us": 128, "transmit_time_ms": 400 },
+                { "freq_hz": 868300000, "scan_time_us": 128, "transmit_time_ms": 400 },
+                { "freq_hz": 868500000, "scan_time_us": 128, "transmit_time_ms": 400 },
+                { "freq_hz": 869525000, "scan_time_us": 5000, "transmit_time_ms": 4000 }
+            ]
+        },
             "sx127x_rssi_offset": -4 /* dB */
         },
         "antenna_gain": 0, /* antenna gain, in dBi */
@@ -212,8 +219,8 @@
     "gateway_conf": {
         "gateway_ID": "005043FFFEECEAF1",
         "server_address": "eu1.cloud.thethings.network",
-        "serv_port_up": 1680,
-        "serv_port_down": 1680,
+        "serv_port_up": 1700,
+        "serv_port_down": 1700,
         "keepalive_interval": 10,
         "stat_interval": 30,
         "push_timeout_ms": 100,
